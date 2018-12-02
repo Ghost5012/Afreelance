@@ -16,7 +16,8 @@ const routes:Routes=[
   {path:'submit project', component:SubmitprojectComponent},
   {path:'login',component:LoginComponent},
   {path:'sign-up',component:SignUpComponent},
-  {path:'404',component:FourOFourErrorComponent}
+  {path:'404',component:FourOFourErrorComponent},
+  {path:'**',redirectTo:'404'}
 ]
 @NgModule({
   declarations: [
