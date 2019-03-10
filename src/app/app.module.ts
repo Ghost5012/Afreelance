@@ -11,12 +11,16 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { SubmitprojectComponent } from './components/submitproject/submitproject.component';
 import { FourOFourErrorComponent } from './components/four-o-four-error/four-o-four-error.component';
+import { FreelancerComponent } from './components/freelancer/freelancer.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 const routes:Routes=[
   {path:'',component:HomeComponent},
   {path:'about',component:AboutComponent},
   {path:'submit project', component:SubmitprojectComponent},
   {path:'login',component:LoginComponent},
   {path:'sign-up',component:SignUpComponent},
+  {path:'freelancer',component:FreelancerComponent},
+  {path:'password-reset',component:ResetPasswordComponent},
   {path:'404',component:FourOFourErrorComponent},
   {path:'**',redirectTo:'404'}
 ]
@@ -28,7 +32,9 @@ const routes:Routes=[
     SignUpComponent,
     LoginComponent,
     SubmitprojectComponent,
-    FourOFourErrorComponent
+    FourOFourErrorComponent,
+    FreelancerComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

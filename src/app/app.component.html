@@ -1,61 +1,143 @@
-<nav class="navbar navbar-expand-lg fixed-top">
-    <div class="navbar-brand">Afreelance</div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarElements" aria-controls="navbarElements" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarElements">
-        <ul class="navbar-nav mr-4">
-            <li class="navbar-item">
-                <a class="nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a>
-            </li>
-            <li><a class="nav-link" [routerLink]="['/sign-up']" routerLinkActive="router-link-active" >Join</a></li>
-            <li class="navbar-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" >Login <span class="caret"></span></a>
-                <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
-                    <div class="col-lg-12 login-form">
-                        <div class="text-center"><h3><b>Log In</b></h3></div>
-                        <form id="ajax-login-form" action="#" method="post" role="form" autocomplete="off">
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
-                            </div>
-
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-5 pull-right">
-                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="text-center">
-                                            <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
-                        </form>
-                    </div>
+<header class="fixed-top">
+    <div class="bande d-none d-lg-block"></div>
+    <div>
+        <nav class="navbar navbar-expand-lg"> 
+            <div>
+                <!-- <button class="navbar-toggler btn-default button2" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-control="navbarNav2" aria-expand="false" aria-label="Toggle navigation">
+                    <i class="fa fa-search"></i>
+                </button> -->
+                <button class="navbar-toggler bouton1" type="button" data-toggle="collapse" data-target="#userNav" aria-control="navbarNav2" aria-expand="false" aria-label="Toggle navigation">
+                    <i class="fa fa-user"></i>
+                </button>
+            </div>
+            <div class="navbar-brand">Afreelance</div>
+            <button class="navbar-toggler bouton" type="button" data-toggle="collapse" data-target="#navbarElements" aria-controls="navbarElements" aria-expanded="false" aria-label="Toggle navigation">
+                    <span>Menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarElements">
+                <ul class="navbar-nav mr-4">
+                    <li class="navbar-item">
+                        <a class="nav-link" data-toggle="modal"  routerLinkActive="router-link-active" data-target="#about" style="color:white;">A Propos</a>
+                    </li>
+                    <li><a class="nav-link" [routerLink]="['/sign-up']" routerLinkActive="router-link-active" >S'inscrire</a></li>
+                    <li class="navbar-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#login" style="color:white;">Connexion <span class="caret"></span></a>
+                    </li>
+                    <li class="navbar-item">
+                    <a class="nav-link" [routerLink]="['/submit project']" routerLinkActive="router-link-active" >Soumettre un project</a>
+                    </li>
+                    <li class="navbar-item">
+                    <a class="nav-link" [routerLink]="['/freelancer']" routerLinkActive="router-link-active" >freelancer</a>
+                    </li>
                 </ul>
-            </li>
-            <li class="navbar-item">
-              <a class="nav-link" [routerLink]="['/submit project']" routerLinkActive="router-link-active" >Submit a Project</a>
-            </li>
-        </ul>
+            </div>
+        </nav>
     </div>
-</nav>
+    <div class="bande d-none d-sm-block d-md-block d-lg-none"></div>
+</header>
 <section>
-  <router-outlet></router-outlet>
+    <div class="collapse navbar-collapse" id="userNav" >
+        <div class="row inline">
+            <button class="insc">
+                <i class="fa fa-user"></i>
+                INSCRIVEZ-VOUS
+            </button>
+            <button class="conn">
+                <i class="fa fa-power-off"></i>
+                CONNEXION
+            </button>
+        </div>
+    </div>
 </section>
+<div class="content">
+    <div class="space"></div>
+    <router-outlet></router-outlet>
+</div>
+<!-- login modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <input type="email" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fa fa-lock prefix grey-text"></i>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div>
+        <p class="text-center"><a [routerLink]="['/password-reset']" class="close mp-reset" data-dismiss="modal" aria-label="Close">Mot de passe oublie?</a></p>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- about modal -->
+<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="aProposDeNous" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">A propos de nous</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center">Qui sommes nous</h5><br>
+                <p style="text-align:justify;"><strong><span class="overseas-o">O</span>verseas</strong> est une equipe de jeunes developpeurs Camerounais portee vers la recherche et l'innovation
+                technologique, avec une direction de recherche centree sur l'application des technologies dans le
+                domaine sociale</p>
+                <h6 class="text-center">Nos ideologies</h6>
+                <ul>
+                    <li>Le Freelancing comme l'avenir de l'entreprise</li>
+                    <li>Le Freelancing comme un choix de carriere</li>
+                    <li>Stop thinking and realize</li>
+                    <li>Be your own Boss</li>
+                    <li>Des boulots a porte de click</li>
+                    <li>La limite du Freelance est c'elle qu'il s'impose</li>
+                    <li>Get your job done at a low price</li>
+                    <li>Enhance your creativity</li>
+                </ul>
+                <hr>
+                <h4 class="text-center">Nos services</h4>
+                    <h5 class="text-center">Besoins recenses</h5>
+                    <ul>
+                        <li>Difficultes a trouver un job en adequation avec le domaine de competence</li>
+                        <li>Difficultes a entrer en contact avec des fournisseurs de services competants 
+                            et offrants des services a moindre cout</li>
+                        <li>Un desavantage pour les personnes disposants des qualifications, mais ne disposants 
+                            pas de diplomes en adequation avec le connaissances
+                        </li>
+                        <li>
+                            difficultes a rassembler des competences et les confronter a un project pour un meilleur rapport 
+                            qualite-prix
+                        </li>
+                        <li>Lourdes Contraintes professionnels dans les entreprises</li>
+                    </ul>
+                    <h5>Solutions proposees</h5>
+                    <p style="text-align:justify;"><strong><span class="overseas-o">O</span>verseas</strong> se propose donc de mettre en relation
+                        les entreprises(tout demandeur de service) avec des personnes capables de leur apporter des solutions a partir 
+                        a partir des points relativements proches ou eloignes a des couts abordables et dans des delais choisis.
+                    </p>
+                    <p style="text-align: justify">Il propose aussi des forums pour alimenter des connaissances dans le domaine du Freelancing
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- footer section -->
 <footer class="footer">
     <div class="container bottom-border">
@@ -63,7 +145,16 @@
             <div class="col-sm-6 col-lg-2 col-md-3">
                     <h5 class="headin5_amrc col_white_amrc pt2">Our domains</h5>
                     <ul class="footer-url">
-                        <li><a>Computer science</a></li>
+                        <li class="dropdown dmenu"><a class="dropdown-toggle">Computer science</a>
+                            <div class="dropdown-menu sm-menu">
+                                <a class="dropdown-item" href="#">Link 1</a>
+                                <a class="dropdown-item" href="#">Link 2</a>
+                                <a class="dropdown-item" href="#">Link 3</a>
+                                <a class="dropdown-item" href="#">Link 4</a>
+                                <a class="dropdown-item" href="#">Link 5</a>
+                                <a class="dropdown-item" href="#">Link 6</a>
+                            </div>
+                        </li>
                         <li><a>Digital marketing</a></li>
                         <li><a>Personal Trainning</a></li>
                         <li><a>Writing and Translation</a></li>
