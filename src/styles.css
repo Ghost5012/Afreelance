@@ -9,12 +9,18 @@ html,body{
 /* .content{
     margin-top: 100px;
 } */
-html,h1,h2,h3,h4,h5,h6,a{
+html,h1,h2,h3,h4,h5,h6,a,button{
  font-family: "Raleway";
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+  }
 .navbar, .footer{ background:rgb(155, 0, 0);}
 
-.nav-link , .navbar-brand, .footer a{ color: #f2f5ef; cursor: pointer;}
+.nav-link , .nacontentvbar-brand,.mr-4, .footer a{ color: #f2f5ef; cursor: pointer;}
 
 .nav-link{ 
     margin-right: 1em !important;

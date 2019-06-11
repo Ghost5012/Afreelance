@@ -1,5 +1,6 @@
 header{
     padding-bottom: 0%;
+    height: 60px;
 }
 ul.dropdown-lr {
     width: 300px;
@@ -20,6 +21,14 @@ ul.dropdown-lr {
   nav .navbar-toggler{
       background: black;
   }
+  .mr-4 button{
+    background: rgb(155, 0, 0);
+    height: 100%;
+    border: none;
+  }
+  .mr-4 button:hover{
+    color: black;
+  }
 .dropdown{
     border-radius:0;
     border:0;
@@ -29,6 +38,11 @@ ul.dropdown-lr {
     border:0;
     top:80%;
     border-radius:0px 0px 5px 5px;
+}
+.dropdown-toggle::before, 
+.dropdown-toggle::after {
+  /* to remove the caret from the dropdown menu */
+    content: none;
 }
 .dropdown-item:hover{
     background:transparent;
@@ -83,5 +97,37 @@ section{
 }
 .space{
     height: 70px;
+    width: 100%;
+}
+.dropdown-menu-large{
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px 0px;
+    width: 90%;
+    background-color: white;
+    color: black;
+}
+.dropdown-menu-large a{
+  color: black;
+}
+  
+  @media (max-width: 768px) {
+    .dropdown-menu-large {
+      margin-top: 10px;
+      margin-left: 0 ;
+      margin-right: 0 ;
+    }
+    .dropdown-menu-large > li {
+      margin-bottom: 30px;
+    }
+    .dropdown-menu-large > li:last-child {
+      margin-bottom: 0;
+    }
+    .dropdown-menu-large .dropdown-header {
+      padding: 3px 15px !important;
+    }
+  }
+#userNav{
+    background-color: white;
     width: 100%;
 }
